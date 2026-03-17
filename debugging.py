@@ -56,3 +56,50 @@ print("Average daily steps:", average)
 print("Highest steps in a day:", highest)
 print("Lowest steps in a day:", lowest)
 print("Goal met each day:", goal_met)
+def analizar_pasos():
+    # 1. Entrada y conversión (Error común: olvidar convertir a int)
+    entrada = input("Ingresa tus pasos diarios durante 7 días (separados por espacios): ")
+    # Usamos una lista de comprensión para convertir cada texto en entero
+    pasos = [int(x) for x in entrada.split()]
+
+    # Llamadas a las funciones
+    total = calcular_total(pasos)
+    promedio = calcular_promedio(pasos)
+    maximo = calcular_maximo(pasos)
+    minimo = calcular_minimo(pasos)
+    metas = verificar_metas(pasos)
+
+    # Impresión del resumen
+    print(f"Total steps: {total}")
+    print(f"Average daily steps: {promedio}")
+    print(f"Highest steps in a day: {maximo}")
+    print(f"Lowest steps in a day: {minimo}")
+    print(f"Goal met each day: {metas}")
+
+# --- Funciones de Cálculo ---
+
+def calcular_total(lista):
+    return sum(lista)
+
+def calcular_promedio(lista):
+    if len(lista) == 0:
+        return 0
+    return sum(lista) // len(lista)
+
+def calcular_maximo(lista):
+    return max(lista)
+
+def calcular_minimo(lista):
+    return min(lista)
+
+def verificar_metas(lista):
+    resultados = []
+    for dia in lista:
+        if dia >= 10000:
+            resultados.append(True)
+        else:
+            resultados.append(False)
+    return resultados
+
+if __name__ == "__main__":
+    analizar_pasos()
