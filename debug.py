@@ -15,5 +15,5 @@ z = int(input("Enter a number:\n"))
 
 print("Maximum value:", maximum)
 
-
-
+max_val = find_max(n1, n2, n3)
+print(f"Maximum value: {max_val}")
