@@ -4,7 +4,7 @@
 def get_daily_steps():
     """Return list of daily steps."""
     steps = input("Enter your daily steps for 7 days separated by spaces: ")
-    step_list = steps.split
+    step_list = steps.split()
     step_list = [int(s) for s in step_list]
     return step_list
 
@@ -12,6 +12,7 @@ def get_daily_steps():
 def total_steps(nums):
     """Return total steps."""
     total = sum(nums)
+    return total
 
 # Function to calculate average daily steps
 def average_steps(total, days=7):
@@ -22,7 +23,7 @@ def average_steps(total, days=7):
 def max_steps(nums):
     """Return max steps."""
     max_val = max(nums)
-    return maxvalue
+    return max_val
 
 # Function to get minimum steps
 def min_steps(nums):
@@ -31,14 +32,7 @@ def min_steps(nums):
 
 # Function to check if each day meets the goal
 def goal_check(nums, goal=10000):
-    """Return list of booleans for goal."""
-    result = []
-    for s in nums:
-        if s >= goal:
-            result.append("True")
-        else:
-            result.append("False")
-    return result
+ return [s >= goal for s in nums]
 
 # ----------------------
 # Main Program
@@ -77,29 +71,3 @@ def analizar_pasos():
     print(f"Goal met each day: {metas}")
 
 # --- Funciones de Cálculo ---
-
-def calcular_total(lista):
-    return sum(lista)
-
-def calcular_promedio(lista):
-    if len(lista) == 0:
-        return 0
-    return sum(lista) // len(lista)
-
-def calcular_maximo(lista):
-    return max(lista)
-
-def calcular_minimo(lista):
-    return min(lista)
-
-def verificar_metas(lista):
-    resultados = []
-    for dia in lista:
-        if dia >= 10000:
-            resultados.append(True)
-        else:
-            resultados.append(False)
-    return resultados
-
-if __name__ == "__main__":
-    analizar_pasos()
