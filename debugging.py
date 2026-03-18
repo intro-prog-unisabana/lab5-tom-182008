@@ -17,7 +17,7 @@ def total_steps(nums):
 # Function to calculate average daily steps
 def average_steps(total, days=7):
     """Return average steps as int."""
-    return total / days
+    return total // days
 
 # Function to get maximum steps
 def max_steps(nums):
